@@ -5,7 +5,7 @@ import { useDebounce } from '@/hooks/use-debounce';
 import { Button } from '../ui/button';
 import { usePathname, useRouter, useSearchParams } from 'next/navigation';
 
-const SearchInput = () => {
+const SearchInput = ({ isLoading }: { isLoading: boolean }) => {
 
     const router = useRouter();
     const pathname = usePathname();
@@ -27,8 +27,8 @@ const SearchInput = () => {
 
     return (
         <form className="flex gap-2 justify-center items-center" onSubmit={handleSubmit}>
-            <Input className='min-w-xl' value={searchValue} onChange={(e) => setSearchValue(e.target.value)} placeholder='Find me an affordable steak restaurant near SM Mall of Asia...' />
-            <Button type="submit">Search</Button>
+            <Input disabled={isLoading} className='min-w-xl' value={searchValue} onChange={(e) => setSearchValue(e.target.value)} placeholder='Find me an affordable steak restaurant near SM Mall of Asia...' />
+            <Button disabled={isLoading} type="submit">Search</Button>
         </form>
     )
 }
