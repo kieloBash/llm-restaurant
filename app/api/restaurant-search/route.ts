@@ -50,7 +50,7 @@ export async function POST(request: Request) {
   const urlParams = new URLSearchParams(queryParams);
 
   const url = `${foursSquareAPI_URL}?${urlParams.toString()}&limit=${fourSquareLimit}&fields=name%2Clocation%2Chours%2Cprice%2Ctastes%2Cdescription%2Crating%2Cfsq_id`;
-  console.log("Foursquare URL:", url);
+  // console.log("Foursquare URL:", url);
 
   try {
     const response = await axios.get(url, {
@@ -63,7 +63,16 @@ export async function POST(request: Request) {
     const { results } = response.data;
     const restaurants = results as FoursquarePlace[];
 
-    return NextResponse.json(restaurants, { status: 200 });
+    let filtered = restaurants;
+
+    if (parameters.min_rating !== undefined && parameters.min_rating > 0) {
+      filtered = filtered.filter(
+        (r) =>
+          r.rating !== undefined && r.rating >= (parameters.min_rating ?? 0)
+      );
+    }
+
+    return NextResponse.json(filtered, { status: 200 });
   } catch (error: any) {
     console.error("Error fetching data from Foursquare API:", error);
     return NextResponse.json(

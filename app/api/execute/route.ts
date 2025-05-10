@@ -55,7 +55,7 @@ export async function POST(request: Request) {
     try {
       parsed = JSON.parse(outputText);
 
-      console.log(parsed);
+      // console.log(parsed);
     } catch {
       return NextResponse.json(
         { error: "Failed to parse OpenAI response as JSON.", raw: outputText },

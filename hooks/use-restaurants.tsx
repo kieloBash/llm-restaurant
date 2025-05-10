@@ -21,6 +21,7 @@ function useRestaurants(search: string) {
         queryFn: () => fetchData(search),
         refetchOnWindowFocus: false,
         placeholderData: keepPreviousData,
+        enabled: search != ""
     });
 
     return {
