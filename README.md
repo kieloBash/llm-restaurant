@@ -18,13 +18,13 @@ It cannot correctly display the correct term for the cuisine on the display resu
 
 ### 3. Configure Environment Variables
 
-FOURSQUARE_API_KEY=
-FOURSQUARE_CLIENT_ID=
-FOURSQUARE_CLIENT_SECRET=
-OPENAI_API_KEY=
+#### FOURSQUARE_API_KEY=
+#### FOURSQUARE_CLIENT_ID=
+#### FOURSQUARE_CLIENT_SECRET=
+#### OPENAI_API_KEY=
 
-Defaults:
-FOURSQUARE_API_URL=https://api.foursquare.com/v3/places/search
-FOURSQUARE_LIMIT=10
-RESTAURANT_SEARCH_API_URL=/api/restaurant-search
-NEXT_PUBLIC_APP_URL=http://localhost:3000
+#### Defaults:
+#### FOURSQUARE_API_URL=https://api.foursquare.com/v3/places/search
+#### FOURSQUARE_LIMIT=10
+#### RESTAURANT_SEARCH_API_URL=/api/restaurant-search
+#### NEXT_PUBLIC_APP_URL=http://localhost:3000
