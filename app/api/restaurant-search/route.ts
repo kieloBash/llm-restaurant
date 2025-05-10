@@ -33,8 +33,11 @@ export async function POST(request: Request) {
 
   const queryParams: Record<string, string> = {
     query: parameters.query,
-    open_now: String(parameters.open_now), // boolean → string
   };
+
+  if (parameters.open_now != null) {
+    queryParams.open_now = String(parameters.open_now);
+  }
 
   if (parameters.near) {
     queryParams.near = parameters.near;

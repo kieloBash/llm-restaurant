@@ -29,7 +29,6 @@ export const LLMParametersSchema = z.object(
         invalid_type_error: "Open now must be a boolean",
       })
       .optional()
-      .default(true),
   },
   {
     invalid_type_error: "Parameters must be a valid object",
