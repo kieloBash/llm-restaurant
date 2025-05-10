@@ -16,7 +16,7 @@ const RestaurantList = ({ restaurants, searchTerm }: {
 }) => {
     if (restaurants.isLoading || restaurants.isFetching) {
         return (
-            <div className='flex gap-4 justify-center items-center w-full h-[80vh]'>
+            <div className='flex gap-4 justify-center items-center w-full h-[40vh]'>
                 <LoaderIcon className='animate-spin' />
                 <p className="text-lg font-medium">Finding restaurants just for you...</p>
             </div>
@@ -33,7 +33,7 @@ const RestaurantList = ({ restaurants, searchTerm }: {
     }
 
     return (
-        <div className='grid grid-cols-3 gap-4 w-full py-8'>
+        <div className='grid grid-cols-1 lg:grid-cols-3 gap-4 w-full py-8'>
             {restaurants?.data?.map((restaurant) => (
                 <RestaurantCard key={restaurant.fsq_id} data={restaurant} />
             ))}

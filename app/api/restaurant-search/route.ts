@@ -49,7 +49,7 @@ export async function POST(request: Request) {
 
   const urlParams = new URLSearchParams(queryParams);
 
-  const url = `${foursSquareAPI_URL}?${urlParams.toString()}&limit=${fourSquareLimit}&fields=name%2Clocation%2Chours%2Cprice%2Ctastes%2Cdescription%2Crating%2Cfsq_id`;
+  const url = `${foursSquareAPI_URL}?${urlParams.toString()}&sort=RATING&limit=${fourSquareLimit}&fields=name%2Clocation%2Chours%2Cprice%2Ctastes%2Cdescription%2Crating%2Cfsq_id`;
   // console.log("Foursquare URL:", url);
 
   try {
