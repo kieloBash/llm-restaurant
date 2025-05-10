@@ -24,12 +24,16 @@ export const LLMParametersSchema = z.object(
         invalid_type_error: "Min price must be a number",
       })
       .optional(),
+    min_rating: z
+      .number({
+        invalid_type_error: "Min rating must be a number",
+      })
+      .optional(),
     open_now: z
       .boolean({
         invalid_type_error: "Open now must be a boolean",
       })
-      .optional()
-      .default(true),
+      .optional(),
   },
   {
     invalid_type_error: "Parameters must be a valid object",

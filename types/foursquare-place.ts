@@ -1,5 +1,6 @@
 export interface FoursquarePlace {
   fsq_id: string;
+  description?: string;
   hours?: FoursquareHours;
   location?: FoursquareLocation;
   name: string;
